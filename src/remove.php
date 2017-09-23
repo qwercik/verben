@@ -1,6 +1,6 @@
 <?php
 
-require 'src/functions.php';
+require_once 'src/functions.php';
 
 if ($_POST) {
 	$verbsArray = getVerbsArray();
@@ -9,7 +9,6 @@ if ($_POST) {
 	$element = array_search($verbToRemove, array_column($verbsArray, 'polish'));
 	if ($element !== false) {
 		unset($verbsArray[$element]);
-		var_dump($verbsArray);
 		if (saveNewVerbsArray($verbsArray)) {
 			echo "Pomyślnie usunięto czasownik $verbToRemove z listy";
 		} else {

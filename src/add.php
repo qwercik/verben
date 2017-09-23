@@ -3,7 +3,7 @@
 require 'functions.php';
 
 if ($_POST) {
-	$_POST = array_filter($_POST, function($element) {
+	$_POST = array_filter($_POST, function ($element) {
 		return !empty($element);
 	});
 
